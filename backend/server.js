@@ -1,3 +1,4 @@
+
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -5,13 +6,28 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import jwt from "jsonwebtoken";
-import fetch from "node-fetch"; 
+import fetch from "node-fetch";
+import path from "path";
+import { fileURLToPath } from "url";
 import User from "./Models/User.js";
-
+const port = process.env.PORT || 4000;
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Necessário para resolver caminhos quando usamos ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// ---------- SERVIR O FRONTEND ----------
+
+app.use(express.static(path.join(__dirname, "..", "frontend")));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "index.html"));
+});
+
+// -----------------------------------------------
 
 if (!process.env.MONGO_URI) {
     console.error("Dev verifica o MONGO_URI");
@@ -22,7 +38,6 @@ mongoose
     .connect(process.env.MONGO_URI, { dbName: "animes" })
     .then(() => console.log(" MongoDB conectado"))
     .catch(err => console.error("Erro no MongoDB:", err));
-
 
 const auth = (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -37,7 +52,6 @@ const auth = (req, res, next) => {
     });
 };
 
-
 app.get("/api/profile", auth, async (req, res) => {
     const user = await User.findById(req.userId);
 
@@ -45,7 +59,6 @@ app.get("/api/profile", auth, async (req, res) => {
 
     res.json({ user });
 });
-
 
 app.post("/api/login", async (req, res) => {
     const { email, nome } = req.body;
@@ -78,7 +91,6 @@ app.post("/api/register", async (req, res) => {
 
     res.json({ token });
 });
-
 
 const generoMap = {
     "Ação": "1", "Aventura": "2", "Comédia": "4", "Drama": "8",
@@ -121,7 +133,6 @@ app.post("/api/quiz", auth, async (req, res) => {
         res.status(500).json({ message: "Erro ao recomendar" });
     }
 });
-
 
 app.get("/api/noticias", auth, async (req, res) => {
     try {
@@ -179,5 +190,6 @@ app.delete("/api/favoritos/:id", auth, async (req, res) => {
     res.json({ message: "Removido!" });
 });
 
-
-app.listen(4000, () => console.log("http://localhost:4000"));
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
+});

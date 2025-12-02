@@ -1,0 +1,228 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* ======== TEMA DARK ======== */
+
+body {
+  background: radial-gradient(circle at center, #0f0f13, #030303 80%);
+  color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Animação suave ao abrir */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ======== NAVBAR ======== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  background: rgba(20, 20, 25, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.navbar a,
+.navbar button {
+  color: #d0d0ff;
+  text-decoration: none;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  color: #7aa2ff;
+  text-shadow: 0 0 10px #7aa2ff;
+}
+
+/* ======== CONTAINER ======== */
+
+.container {
+  width: 100%;
+  max-width: 520px;
+  padding: 20px;
+}
+
+/* ======== CARD DARK ======== */
+
+.card {
+  background: linear-gradient(145deg, #111118, #08080c);
+  padding: 35px;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(50, 90, 255, 0.15);
+
+  transition: 0.3s ease;
+  animation: floatIn 0.7s ease;
+}
+
+@keyframes floatIn {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    0 0 35px rgba(80, 120, 255, 0.25);
+}
+
+/* ======== TÍTULOS ======== */
+
+h1 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #bad0ff;
+  text-shadow: 0 0 15px rgba(90,120,255,0.35);
+}
+
+h2 {
+  color: #c1c7ff;
+}
+
+/* ======== FORM ======== */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+
+  background: #14141b;
+  border: 1px solid #2d2d39;
+  color: #f5f5f5;
+
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #6a8dff;
+  box-shadow: 0 0 10px rgba(90,120,255,0.5);
+  outline: none;
+}
+
+/* ======== BOTÕES ======== */
+
+button,
+.btn {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+
+  background: linear-gradient(90deg, #4a68ff, #6b8cff);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(90,120,255,0.4);
+  background: linear-gradient(90deg, #2f4fff, #5476ff);
+}
+
+.logout-btn {
+  color: #ff8888 !important;
+}
+
+.logout-btn:hover {
+  color: #ffb5b5 !important;
+  text-shadow: 0 0 10px #ff4d4d;
+}
+
+/* ======== LINKS ======== */
+
+.small a {
+  color: #7aa2ff;
+}
+
+.small a:hover {
+  text-decoration: underline;
+}
+
+/* ======== MENSAGENS ======== */
+
+.msg {
+  margin-top: 12px;
+  font-size: 15px;
+  text-align: center;
+  color: #ff6b6b;
+}
+
+/* ======== OCULTO ======== */
+
+.hidden {
+  display: none;
+}
+
+/* ======== RESULTADOS/ITENS ======== */
+
+.resultados .card {
+  background: #101018;
+}
+
+/* ======== FAVORITOS/NOTÍCIAS LISTA ======== */
+
+#listaFavoritos div,
+#listaNoticias div {
+  padding: 12px;
+  border-radius: 10px;
+  background: #14141b;
+  border: 1px solid #2d2d39;
+  margin-bottom: 10px;
+  color: #e7e7e7;
+  transition: 0.2s ease;
+}
+
+#listaFavoritos div:hover,
+#listaNoticias div:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0 10px rgba(110, 140, 255, 0.25);
+}

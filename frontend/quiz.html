@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Mundo Anime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="quiz.html">Quiz</a>
+  <a href="perfil.html">Perfil</a>
+  <a href="noticias.html">Notícias</a>
+  <button id="logoutBtn" class="logout-btn">Sair</button>
+</nav>
+
+<div class="container quiz-container">
+    <div class="card">
+        <!-- Melhorando título com descrição -->
+        <h1>Quiz Mundo Anime</h1>
+        <p class="quiz-subtitle">Responda as perguntas abaixo para descobrir suas recomendações personalizadas</p>
+        
+        <form id="quizForm" class="quiz-form">
+
+            <!-- Adicionando estrutura de questão estilizada -->
+            <div class="question-block">
+                <div class="question-number">01</div>
+                <label class="question-label">Qual seu anime favorito?</label>
+                <input type="text" name="generoFavorito" placeholder="Ex: Naruto, One Piece, Attack on Titan..." required>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">02</div>
+                <label class="question-label">Qual seu personagem favorito?</label>
+                <input type="text" name="tipoProtagonista" placeholder="Ex: Goku, Luffy, Eren..." required>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">03</div>
+                <label class="question-label">Qual seu gênero favorito?</label>
+                <select name="serieLongaOuCurta" required>
+                    <option value="">Selecione um gênero</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Comédia">Comédia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasia">Fantasia</option>
+                    <option value="Mistério">Mistério</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Terror">Terror</option>
+                </select>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">04</div>
+                <label class="question-label">Prefere séries longas ou curtas?</label>
+                <select name="generosMaisGosta" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Curta (<25 eps)">Curta (&lt;25 eps)</option>
+                    <option value="Média (25-50 eps)">Média (25-50 eps)</option>
+                    <option value="Longa (&gt;50 eps)">Longa (&gt;50 eps)</option>
+                </select>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">05</div>
+                <label class="question-label">O que mais valoriza em um anime?</label>
+                <select name="aspectosValorizados" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="História envolvente">História envolvente</option>
+                    <option value="Animação de qualidade">Animação de qualidade</option>
+                    <option value="Trilha sonora">Trilha sonora</option>
+                    <option value="Desenvolvimento de personagens">Desenvolvimento de personagens</option>
+                    <option value="Plot twists">Plot twists</option>
+                </select>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">06</div>
+                <label class="question-label">Prefere mais ação ou romance?</label>
+                <select name="pergunta6" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Equilibrado">Equilibrado</option>
+                </select>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">07</div>
+                <label class="question-label">Prefere animes antigos ou recentes?</label>
+                <select name="pergunta7" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Antigos">Antigos</option>
+                    <option value="Recentes">Recentes</option>
+                    <option value="Ambos">Ambos</option>
+                </select>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">08</div>
+                <label class="question-label">Qual estilo de animação prefere?</label>
+                <select name="pergunta8" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Tradicional 2D">Tradicional 2D</option>
+                    <option value="3D/CGI">3D/CGI</option>
+                    <option value="Mix 2D+3D">Mix 2D+3D</option>
+                </select>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">09</div>
+                <label class="question-label">Prefere shonen ou seinen?</label>
+                <select name="pergunta9" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Shonen">Shonen</option>
+                    <option value="Seinen">Seinen</option>
+                    <option value="Ambos">Ambos</option>
+                </select>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">10</div>
+                <label class="question-label">Prefere histórias leves ou complexas?</label>
+                <select name="pergunta10" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Leve e divertido">Leve e divertido</option>
+                    <option value="Complexo e profundo">Complexo e profundo</option>
+                    <option value="Equilibrado">Equilibrado</option>
+                </select>
+            </div>
+
+            <!-- Melhorando botão de envio -->
+            <button type="submit" class="submit-quiz-btn">
+                <span>Descobrir Recomendações</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </form>
+
+        <div id="resultados"></div>
+    </div>
+</div>
+
+<script src="quiz.js"></script>
+</body>
+</html>
