@@ -1,0 +1,217 @@
+/* RESET E BASE */
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f3f8;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 16px;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* TÍTULOS */
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* FORMULÁRIO */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form input,
+.form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #2463eb;
+  box-shadow: 0 0 5px rgba(36, 99, 235, 0.5);
+  outline: none;
+}
+
+/* BOTÕES */
+button,
+.btn {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #2463eb;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: #1d4fd1;
+  transform: translateY(-2px);
+}
+
+/* LINKS */
+.small a {
+  color: #2463eb;
+  text-decoration: none;
+}
+
+.small a:hover {
+  text-decoration: underline;
+}
+
+/* MENSAGENS */
+.msg {
+  margin-top: 12px;
+  color: #b00;
+  font-size: 14px;
+}
+
+/* OCULTAR ELEMENTOS */
+.hidden {
+  display: none;
+}
+
+/* RADIO E CHECKBOX */
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.radio-group label,
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* RESULTADOS */
+.resultados {
+  margin-top: 24px;
+}
+
+.resultados h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.resultados .card {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resultados .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.resultados img {
+  display: block;
+  margin: 12px auto;
+  border-radius: 8px;
+  max-width: 180px;
+}
+
+/* HEADER QUIZ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.logout {
+  background: #eb4d4d;
+}
+
+.logout:hover {
+  background: #d13c3c;
+}
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2463eb;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar a,
+.navbar button {
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  text-decoration: underline;
+}
+
+.logout-btn {
+  color: #ffdddd !important;
+}

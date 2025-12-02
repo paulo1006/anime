@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <title>Projeto — Login / Cadastro / Perfil</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="container">
+<section class="card">
+
+<h1>MUNDO ANIMES</h1>
+
+<div id="forms">
+ <form id="registerForm" class="form"> <h2>Cadastro</h2> <input name="nome" placeholder="Nome" required /> <input name="email" type="email" placeholder="Email" required /> <input name="senha" type="password" placeholder="Senha" required /> <button type="submit">Cadastrar</button> <p class="small">Já tem conta? <a href="#" id="toLogin">Entrar</a></p>
+ </form>
+
+ <form id="loginForm" class="form hidden"> <h2>Login</h2> <input name="email" type="email" placeholder="Email" required /> <input name="senha" type="password" placeholder="Senha" required /> <button type="submit">Entrar</button> <p class="small">Não tem conta? <a href="#" id="toRegister">Cadastrar</a></p>
+ </form>
+ </div>
+
+ <div id="profile" class="hidden profile-box">
+ <h2>Perfil</h2>
+ <p><b>Nome:</b> <span id="profileName"></span></p>
+ <p><b>Email:</b> <span id="profileEmail"></span></p>
+
+ <button id="logout" class="outline">Sair</button>
+ </div>
+
+ <div id="msg" class="msg"></div>
+
+ </section>
+ </main>
+
+ <script src="script.js"></script>
+</body>
+</html>
